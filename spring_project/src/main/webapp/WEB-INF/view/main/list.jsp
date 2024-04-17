@@ -65,7 +65,7 @@
          <li>
            <a href="#" class="nav-link link-body-emphasis">
              <img src="/resources/svg/stock.svg" alt="Bootstrap" width="20" height="20">
-             모의전
+             모의전투 서브웨이 참치 에그슬라이스
            </a>
          </li>
        </ul>
