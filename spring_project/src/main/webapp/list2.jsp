@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
+참깨빵위에 순쇠고기 패티2장 특별한 소스 양상추 치즈 피클 양파까지~ 따란딴따딴<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>BZO</title>
