@@ -13,6 +13,20 @@
 		
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+	    $('.categoryBtn').click(function() {
+	        var category = $(this).data('value');
+	        $('#categoryInput').val(category);
+	        $('#newsCategory').submit();
+	    });
+	});
+
+
+</script>
+
 
 <!--  topBar -->
 	<nav class="shadow p-2 bg-body-tertiary border-bottom">
@@ -65,7 +79,7 @@
          <li>
            <a href="#" class="nav-link link-body-emphasis">
              <img src="/resources/svg/stock.svg" alt="Bootstrap" width="20" height="20">
-             모의전투 서브웨이 참치 에그슬라이스
+             
            </a>
          </li>
        </ul>
@@ -149,25 +163,31 @@
 	             
 	             <h5>News</h5>
 	             
-	             <button type="button" class="btn btn-outline-warning" style="margin-left: 300px;">
-	             	<img src="/resources/svg/politics.png" alt="Bootstrap" width="20" height="20">
-	             	정치
-	             </button>
 	             
-	              <button type="button" class="btn btn-outline-warning" style="margin-left: 30px;">
-	             	<img src="/resources/svg/economic.png" alt="Bootstrap" width="20" height="20">
-	             	경제
-	             </button>
+	             <form method="get" id="newsCategory" action="/main/mainPage">
 	             
-	              <button type="button" class="btn btn-outline-warning" style="margin-left: 30px;">
-	             	<img src="/resources/svg/social.png" alt="Bootstrap" width="20" height="20">
-	             	사회
-	             </button>
-	             
-	              <button type="button" class="btn btn-outline-warning" style="margin-left: 30px;">
-	             	<img src="/resources/svg/issue.png" alt="Bootstrap" width="20" height="20">
-	             	이슈
-	             </button>
+				    <input type="hidden" id="categoryInput" name="text" value="default">
+				    
+				    <button type="button" class="btn btn-outline-warning categoryBtn" data-value="정치" style="margin-left: 300px;">
+				        <img src="/resources/svg/politics.png" alt="Bootstrap" width="20" height="20">
+				        정치
+				    </button>
+				
+				    <button type="button" class="btn btn-outline-warning categoryBtn" data-value="경제" style="margin-left: 30px;">
+				        <img src="/resources/svg/economic.png" alt="Bootstrap" width="20" height="20">
+				        경제
+				    </button>
+				
+				    <button type="button" class="btn btn-outline-warning categoryBtn" data-value="사회" style="margin-left: 30px;">
+				        <img src="/resources/svg/social.png" alt="Bootstrap" width="20" height="20">
+				        사회
+				    </button>
+				
+				    <button type="button" class="btn btn-outline-warning categoryBtn" data-value="이슈" style="margin-left: 30px;">
+				        <img src="/resources/svg/issue.png" alt="Bootstrap" width="20" height="20">
+				        이슈
+				    </button>
+				</form>
 	             
 	             
 	             

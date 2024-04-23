@@ -11,10 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
 
 import com.example.domain.NewsApiVO;
 import com.example.domain.ServerApiVO;
@@ -29,16 +29,25 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/main/*")
 public class ServerApiController {
     
+	@GetMapping("/mainPage")
+	public void mainPage(Model model) {
+		
+		String mainNews = "우진";
+		
+		news(mainNews, model);
+	}
    
-    @GetMapping("/list")
-    public void economic(Model model) {
-
-        String query = "경제";
+	
+//	@RequestMapping(value="/news", method= {RequestMethod.GET})
+    @GetMapping("/news")
+    public String news(String text, Model model) {
+		
+        String query = text;
         String encode = Base64.getEncoder().encodeToString(query.getBytes(StandardCharsets.UTF_8));
     
         URI uri = UriComponentsBuilder.fromUriString("https://openapi.naver.com/")
         .path("v1/search/news.json")
-        .queryParam("query", "경제")
+        .queryParam("query", query)
         .queryParam("display", 5)
         .queryParam("sort", "sim")
         .encode()
@@ -73,7 +82,10 @@ public class ServerApiController {
         
         model.addAttribute("news", news);
         
+        return "/main/mainPage";
+        
     }
+    
    
 
 
