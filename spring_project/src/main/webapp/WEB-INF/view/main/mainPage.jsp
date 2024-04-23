@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <title>BZO 커밋 제목 수정</title>
+   <title>BZO 커밋 제목 수정 ㅇㅇㅇㅇㅇㅇㅇㅇ</title>
 
 	
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
