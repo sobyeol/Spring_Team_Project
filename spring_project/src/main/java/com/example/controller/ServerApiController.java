@@ -32,7 +32,7 @@ public class ServerApiController {
 	@GetMapping("/mainPage")
 	public void mainPage(Model model) {
 		
-		String mainNews = "우진";
+		String mainNews = "속보";
 		
 		news(mainNews, model);
 	}
