@@ -86,6 +86,51 @@ public class ServerApiController {
         
     }
     
+    @GetMapping("/chart")
+    public String chart(String text, Model model) {
+		
+        String serviceKey = "6nb8LASgBI5KdNfSJjUZbt9iTeN0R1aMnjBI0MSXpHyFchnTlPT3cjurMemZMH872d4KBHEBTirFipybWlMd8Q%253D%253D";
+        String encode = Base64.getEncoder().encodeToString(text.getBytes(StandardCharsets.UTF_8));
+    
+        URI uri = UriComponentsBuilder.fromUriString("https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/")
+        .path("getStockPriceInfo")
+        .queryParam("serviceKey", serviceKey)
+        .queryParam("likeItmsNm", text)
+        .encode()
+        .build()
+        .toUri();
+
+        log.info("uri : {}", uri);
+       
+        RequestEntity<Void> req = RequestEntity
+        .get(uri)
+        .header("X-Naver-Client-Id", "8FuasSq49i12orkVTtYH")
+        .header("X-Naver-Client-Secret", "0mRs4FmlxT")
+        .build();
+        
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> resp = restTemplate.exchange(req, String.class);
+        
+        ObjectMapper om = new ObjectMapper();
+        ServerApiVO resultVO = null;
+        
+        try {
+        	resultVO = om.readValue(resp.getBody(), ServerApiVO.class);
+        }
+        catch(JsonMappingException e){
+        	e.printStackTrace();
+        }
+        catch(JsonProcessingException e) {
+        	e.printStackTrace();
+        }
+        
+        List<NewsApiVO> news = resultVO.getItems();
+        
+        model.addAttribute("news", news);
+        
+        return "/main/mainPage";
+        
+    }
    
 
 
