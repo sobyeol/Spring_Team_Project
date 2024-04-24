@@ -8,8 +8,28 @@
    <title>create</title>
    
    
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<link href="/resources/css/test.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="/resources/css/mainPage.css" rel="stylesheet" type="text/css">
+    
+<script type="text/javascript">
+   function checkForm() {
+      if (!document.newMember.id.value) {
+         alert("아이디를 입력하세요.");
+         return false;
+      }
+
+      if (!document.newMember.password.value) {
+         alert("비밀번호를 입력하세요.");
+         return false;
+      }
+
+      if (document.newMember.password.value != document.newMember.password_confirm.value) {
+         alert("비밀번호를 동일하게 입력하세요.");
+         return false;
+      }
+   }
+</script>
 	
 </head>
 <body>
@@ -99,13 +119,14 @@
             </div>
             
         </div>
+	</div>
 <!--  nav_bar,side_bar end -->
-		<div class="container">
+		<div class="content_main">
        
          <div class="col-lg-8 shadow m-4 bg-body-tertiary" style="width:1200px; height:100px;">
             <div>
             	<p class="text-center mt-3 fs-4">회원 가입</p>	
-            	<p class="text-center fs-6">ㅇㅇ</p>
+            	<p class="text-center fs-6">회원가입 회원가입</p>
             </div>
           </div>
 <!--  	title body       -->
@@ -140,32 +161,10 @@
 					<input name="name" type="text" class="form-control" placeholder="name" >
 				</div>
 			</div>
-			<div class="form-group  row">
-				<label class="col-sm-3 mb-2">성별</label>
-				<div class="col-sm-8">
-					<input name="gender" type="radio" value="남" /> 남 
-					<input name="gender" type="radio" value="여" /> 여
-				</div>
-			</div>
 			<div class="form-group row mb-2">
-				<label class="col-sm-3">생일</label>
-				<div class="col-sm-8  ">
-					<input type="text" name="birthyy" maxlength="4" placeholder="년(4자)" size="6"> 
-					<select name="birthmm">
-						<option value="">월</option>
-						<option value="01">1</option>
-						<option value="02">2</option>
-						<option value="03">3</option>
-						<option value="04">4</option>
-						<option value="05">5</option>
-						<option value="06">6</option>
-						<option value="07">7</option>
-						<option value="08">8</option>
-						<option value="09">9</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-					</select> <input type="text" name="birthdd" maxlength="2" placeholder="일" size="4">
+				<label class="col-sm-3">닉네임</label>
+				<div class="col-sm-3">
+					<input name="nickname" type="text" class="form-control" placeholder="nickname" >
 				</div>
 			</div>
 			<div class="form-group row mb-2">

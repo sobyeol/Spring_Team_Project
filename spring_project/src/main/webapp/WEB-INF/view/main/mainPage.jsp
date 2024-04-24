@@ -15,7 +15,7 @@
     <link href="/resources/css/mainPage.css" rel="stylesheet" type="text/css">
 		
 </head>
-<body>
+<body style="background-color: rgb(243,243,243);">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 <script type="text/javascript">
@@ -56,8 +56,8 @@
 
 
     <div class="header">
-        <nav class="shadow p-2 bg-body-tertiary border-bottom">
-		    <div class="d-flex justify-content-start">
+        <nav class="shadow p-2 border-bottom">
+		    <div class="d-flex justify-content-start bg-body-tertiary">
 			    <div class="d-flex ps-5">
 			    	<a href="mainPage" class="d-flex align-items-center mb-2 mb-lg-0 text-warning text-decoration-none">
 			            <span class="fs-4 fw-bold"><b>BZO</b></span>
@@ -142,71 +142,71 @@
 
    <div class="content_main mx-5">
 <!--  content  4menu  탑 바 밑 4개 메뉴  -->
-	<div class="mb-3 ms-3 d-flex">
-		 <div class="shadow d-flex align-items-center" style="height:65px; width:300px;">         
-            	<img src="/resources/svg/building.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
-            	<h5 style="text-align: center; margin-left:40px;">Company<br>Information</h5>
-          </div>
-          <div class="shadow ms-3 d-flex align-items-center" style="height:65px; width:300px;">         
-            	<img src="/resources/svg/community.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
-            	<h5 style="text-align: center; margin-left:40px;">Issue Community</h5>
-          </div>
-          <div class="shadow ms-3 d-flex align-items-center" style="height:65px; width:300px;">         
-            	<img src="/resources/svg/stock.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
-            	<h5 style="text-align: center; margin-left:40px;">Stock Simulator</h5>
-          </div>
-          <div class="shadow ms-3 d-flex align-items-center" style="height:65px; width:300px;">         
-            	<img src="/resources/svg/person-lines-fill.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
-            	<h5 style="text-align: center; margin-left:40px;">My Page</h5>
-          </div>
-	</div>
+		<div class="mb-3 ms-3 d-flex">
+			 <div class="shadow d-flex align-items-center menu_box" style="height:65px; width:300px;">         
+	            	<img src="/resources/svg/building.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
+	            	<h5 style="text-align: center; margin-left:40px;">Company<br>Information</h5>
+	          </div>
+	          <div class="shadow ms-3 d-flex align-items-center menu_box" style="height:65px; width:300px;">         
+	            	<img src="/resources/svg/community.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
+	            	<h5 style="text-align: center; margin-left:40px;">Issue Community</h5>
+	          </div>
+	          <div class="shadow ms-3 d-flex align-items-center menu_box" style="height:65px; width:300px;">         
+	            	<img src="/resources/svg/stock.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
+	            	<h5 style="text-align: center; margin-left:40px;">Stock Simulator</h5>
+	          </div>
+	          <div class="shadow ms-3 d-flex align-items-center menu_box" style="height:65px; width:300px;">         
+	            	<img src="/resources/svg/person-lines-fill.svg" alt="Bootstrap" width="20" height="20" style="margin-left:40px;">
+	            	<h5 style="text-align: center; margin-left:40px;">My Page</h5>
+	          </div>
+		</div>
 <!--  content  4menu end-->
 
 <!-- 	content main 첫번째 줄 차트,챗 -->
 
-	<div class="mb-3 ms-3 d-flex">
-		 <div class="shadow p-3" style="width:615px; height:360px;">
-            <div class="card-head"> 
-             <h5>Chart</h5>
-             <hr style="width:100%; ">
-            </div>
-                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-	                 
-                    
-                 </div>
-          </div>
-          <div class="shadow ms-3 p-3" style="width:615px; height:360px;">
-            <div class="card-head"> 
-             <h5>Chat</h5>
-             <hr style="width:100%; ">
-            </div>
-                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-	                 
-                    
-                 </div>
-          </div>
-	</div>
+		<div class="mb-3 ms-3 d-flex">
+			 <div class="shadow p-3 menu_box" style="width:615px; height:360px;">
+	            <div class="card-head"> 
+	             <h5>Chart</h5>
+	             <hr style="width:100%; ">
+	            </div>
+	                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
+		                 
+	                    
+	                 </div>
+	          </div>
+	          <div class="shadow ms-3 p-3 menu_box" style="width:615px; height:360px;">
+	            <div class="card-head"> 
+	             <h5>Chat</h5>
+	             <hr style="width:100%; ">
+	            </div>
+	                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
+		                 
+	                    
+	                 </div>
+	          </div>
+		</div>
    
    <!-- 	content main 두번째 줄 뉴스,핫이슈 -->
    
-   <div class="mb-3 ms-3 d-flex">
-		 <div id="newsPage" class="shadow p-3" style="width:615px; height:360px;">
-
-            <%@include file="news.jsp" %>
-            		           
-         </div>
-         
-          <div class="shadow ms-3 p-3" style="width:615px; height:360px;">
-            <div class="card-head"> 
-             <h5>Chat</h5>
-             <hr style="width:100%; ">
-            </div>
-                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-	                 
-                    
-                 </div>
-          </div>
-	</div>   
+	   <div class="mb-3 ms-3 d-flex">
+			 <div id="newsPage" class="shadow p-3 menu_box" style="width:615px; height:360px;">
+	
+	            <%@include file="news.jsp" %>
+	            		           
+	         </div>
+	         
+	          <div class="shadow ms-3 p-3 menu_box" style="width:615px; height:360px;">
+	            <div class="card-head"> 
+	             <h5>Chat</h5>
+	             <hr style="width:100%; ">
+	            </div>
+	                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
+		                 
+	                    
+	                 </div>
+	          </div>
+		</div>   
 	</div>
    
    
