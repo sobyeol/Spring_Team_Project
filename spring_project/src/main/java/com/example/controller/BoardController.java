@@ -40,7 +40,6 @@ public class BoardController {
 	@GetMapping("/content") 
 	public void list( Model model) {
 		
-		
 	}
 	
 	@GetMapping("/list") 

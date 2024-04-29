@@ -1,6 +1,6 @@
-@charset "EUC-KR";
+@charset "utf-8";
 
-/* 자유게시판 (ist.jsp)에 사용한 css */
+/* ����寃����� (ist.jsp)�� �ъ�⑺�� css */
 #title {
   border-radius: 50px;
   text-align: center;
@@ -29,14 +29,14 @@
 	background-color: #FDF5E6; 
 }
 
-/* 검색창 css */
+/* 寃���李� css */
 #s1{
 	 margin-left:1000px;
 	 position: relative;
         
 }
 
-/* 게시글 작성(register.jsp) css */
+/* 寃���湲� ����(register.jsp) css */
 
 .container{
 	position: sticky;
