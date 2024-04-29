@@ -3,8 +3,8 @@
 	pageEncoding="UTF-8"%>
 <!-- Main Content -->
 <div id="content">
-<%@include file="../main/mainPage.jsp"%>
-<link href="../resources/css/board.css" rel="stylesheet" type="text/css">
+<%@include file="../include/mainPage2.jsp"%>
+<link href="/resources/css/list.css" rel="stylesheet" type="text/css">
 	<div class="row">
 		<div id='title'>
 			자유게시판
@@ -70,17 +70,18 @@
 							<tr>
 								<td><c:out value="${board.bno}" /></td>
 
-								<td><a href='/board/get?bno=<c:out value="${board.bno}"/>'>
-										<c:out value="${board.title}" />
-								</a> <a class='move' href='<c:out value="${board.bno}"/>'> <c:out
+								<td>
+<%-- 									<a href='/board/get?bno=<c:out value="${board.bno}"/>'> --%>
+<%-- 										<c:out value="${board.title}" /></a> --%>
+										
+									<a class='move' href='<c:out value="${board.bno}"/>'> <c:out
 											value="${board.title}" />
-								</a></td>
+									</a>
+								</td>
 
-								<td><c:out value="${board.writer}" /></td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd"
-										value="${board.regdate}" /></td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd"
-										value="${board.updateDate}" /></td>
+								<td><c:out value="${board.content}" /></td>
+								<td><c:out value="${board.nickname}" /></td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.regdate}" /></td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -89,57 +90,48 @@
 						<a href="/board/register" class="btn btn-primary">글쓰기</a>
 
 					</div>
-				</div>
-
-
 				
 				<nav aria-label="Page navigation example">
 					<ul class="pagination justify-content-center">
 
 						<c:if test="${pageMaker.prev}">
-							<li class="page-item"><a class="page-link"
-								href="${pageMaker.startPage -1}" aria-label="Previous"> <span
-									aria-hidden="true">&laquo;</span> <!-- 왼쪽으로 꺽인 괄호<< -->
-							</a></li>
+							<li class="page-item">
+							<a class="page-link" href="${pageMaker.startPage -1}" aria-label="Previous"> 
+							<span aria-hidden="true">&laquo;</span> <!-- 왼쪽으로 꺽인 괄호<< -->
+							</a>
+							</li>
 						</c:if>
 
-						<c:forEach var="num" begin="${pageMaker.startPage}"
-							end="${pageMaker.endPage}">
+						<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
 							<li class="page-item ${pageMaker.cri.pageNum == num ? "active":""}">
-								<a class="page-link" href="${num}">${num}</a>
-							</li>
+								<a class="page-link" href="${num}">${num}</a></li>
 						</c:forEach>
 
 						<c:if test="${pageMaker.next}">
-							<li class="page-item"><a class="page-link"
-								href="${pageMaker.endPage +1}" aria-label="Next"> <span
-									aria-hidden="true">&raquo;</span> <!--  오른쪽으로 꺽인 괄호>> -->
-							</a></li>
+							<li class="page-item">
+								<a class="page-link" href="${pageMaker.endPage +1}" aria-label="Next"> 
+									<span aria-hidden="true">&raquo;</span> <!--  오른쪽으로 꺽인 괄호>> -->
+								</a>
+							</li>
 						</c:if>
-
+	
 					</ul>
 				</nav>
-
-
+	
 				<form id='actionForm' action="/board/list" method='get'>
-					<input type='hidden' name='pageNum'
-						value='${pageMaker.cri.pageNum}'> <input type='hidden'
-						name='amount' value='${pageMaker.cri.amount}'> <input
-						type='hidden' name='type'
-						value='<c:out value="${ pageMaker.cri.type }"/>'> <input
-						type='hidden' name='keyword'
-						value='<c:out value="${ pageMaker.cri.keyword }"/>'>
+					<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
+				    <input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
+				    
+				    <input type='hidden' name='type' value='<c:out value="${ pageMaker.cri.type }"/>'>
+				    <input type='hidden' name='keyword' value='<c:out value="${ pageMaker.cri.keyword }"/>'>
+			   </form>
 
-				</form>
-
-
+				</div>
 			</div>
+
 		</div>
-
-
-	</div>
 	<!-- /.container-fluid -->
-
+	</div>
 </div>
 <%-- <%@include file="../include/sidebar2.jsp"%> --%>
 <!-- End of Main Content -->

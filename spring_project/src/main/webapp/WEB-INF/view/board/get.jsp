@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%@include file="../include/sidebar.jsp"%>
+<%@include file="../include/mainPage2.jsp"%>
 
 <!-- <body class="bg-gradient-primary"> -->
 

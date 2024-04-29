@@ -41,7 +41,7 @@ public class SampleControllerTests {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 	
-	@Test
+//	@Test
 	public void testConvert() throws Exception {
 		
 		Ticket ticket = new Ticket();

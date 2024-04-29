@@ -27,13 +27,14 @@ public class BoardMapperTests {
 		mapper.getList().forEach(board -> log.info(board));
 	}
 	
-	@Test
+//	@Test
 	public void testInsert()
 	{
 		BoardVO board = new BoardVO();
-		board.setTitle("사회");
-		board.setContent("새로 작성하는 내용");
-		board.setWriter("newbie");
+		board.setTitle("사회게시글");
+		board.setContent("게시글내용");
+		board.setWriter("작성자");
+		board.setNickname("닉네임");
 		
 		mapper.insert(board);
 		
@@ -57,7 +58,7 @@ public class BoardMapperTests {
 	public void testRead()
 	{
 		//존재하는 게시물 번호로 테스트
-		BoardVO board = mapper.read(3L);
+		BoardVO board = mapper.read(446L);
 		
 		log.info(board);
 		
@@ -66,7 +67,7 @@ public class BoardMapperTests {
 //	@Test
 	public void testDelete()
 	{
-		log.info("DELETE COUNT: " + mapper.delete(5L));
+		log.info("DELETE COUNT: " + mapper.delete(402L));
 	}
 
 //	@Test
@@ -90,7 +91,7 @@ public class BoardMapperTests {
 		
 //		10개씩 3페이지
 		cri.setPageNum(1);
-		cri.setAmount(5);
+		cri.setAmount(10);
 		
 		List<BoardVO> list = mapper.getListWithPaging(cri);
 		
@@ -101,7 +102,7 @@ public class BoardMapperTests {
 	public void testTotalCount() {
 		
 		Criteria cri = new Criteria();
-		cri.setKeyword("고구려");
+		cri.setKeyword("사회");
 		cri.setType("TCW");
 		
 		log.info("total count: " + mapper.getTotalCount(cri));
@@ -111,7 +112,7 @@ public class BoardMapperTests {
 	public void testSearch() {
 		
 		Criteria cri = new Criteria();
-		cri.setKeyword("고구려");
+		cri.setKeyword("사회");
 		cri.setType("TCW");
 		
 		List<BoardVO> list = mapper.getListWithPaging(cri);

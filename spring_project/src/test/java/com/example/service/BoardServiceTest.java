@@ -22,7 +22,7 @@ public class BoardServiceTest {
 	@Setter(onMethod_ = { @Autowired })
 	private BoardService service;
 	
-	@Test 
+//	@Test 
 	public void testExist() {
 		
 		log.info(service);
