@@ -166,15 +166,10 @@
 
 	<div class="mb-3 ms-3 d-flex">
 		 <div class="shadow p-3" style="width:615px; height:360px;">
-            <div class="card-head"> 
-             <h5>Chart</h5>
-             <hr style="width:100%; ">
-            </div>
-                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-	                 
-                    
-                 </div>
+            <%@include file="chart.jsp" %>        
           </div>
+          
+          
           <div class="shadow ms-3 p-3" style="width:615px; height:360px;">
             <div class="card-head"> 
              <h5>Chat</h5>
