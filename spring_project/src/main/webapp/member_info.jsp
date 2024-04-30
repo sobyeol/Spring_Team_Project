@@ -12,25 +12,7 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link href="/resources/css/mainPage.css" rel="stylesheet" type="text/css">
     
-<script type="text/javascript">
-   function checkForm() {
-      if (!document.newMember.id.value) {
-         alert("아이디를 입력하세요.");
-         return false;
-      }
-
-      if (!document.newMember.password.value) {
-         alert("비밀번호를 입력하세요.");
-         return false;
-      }
-
-      if (document.newMember.password.value != document.newMember.password_confirm.value) {
-         alert("비밀번호를 동일하게 입력하세요.");
-         return false;
-      }
-   }
-</script>
-	
+ 
 </head>
 <body>
 
@@ -123,63 +105,118 @@
 <!--  nav_bar,side_bar end -->
 		<div class="content_main">
        
-         <div class="col-lg-8 shadow my-4 bg-body-tertiary" style="width:1245px; height:100px;">
+         <div class="col-lg-8 shadow m-4 bg-body-tertiary" style="width:1200px; height:100px;">
             <div>
-            	<p class="text-center mt-3 fs-4">회원 페이지</p>	
-            	<p class="text-center fs-6">회원 메뉴</p>
+            	<p class="text-center mt-3 fs-4">회원 가입</p>	
+            	<p class="text-center fs-6">회원가입 회원가입</p>
             </div>
           </div>
 <!--  	title body       -->
-          <div class="mb-3 d-flex">
-			 <div class="shadow p-3 menu_box" style="width:615px; height:360px;">
-	            <div class="card-head"> 
-	             <h5>Chart</h5>
-	             <hr style="width:100%; ">
-	            </div>
-	                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-		                 
-	                    
-	                 </div>
-	          </div>
-	          <div class="shadow ms-3 p-3 menu_box" style="width:615px; height:360px;">
-	            <div class="card-head"> 
-	             <h5>Chat</h5>
-	             <hr style="width:100%; ">
-	            </div>
-	                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-		                 
-	                    
-	                 </div>
-	          </div>
-		</div>
-   
-   <!-- 	content main 두번째 줄 뉴스,핫이슈 -->
-   
-	   <div class="mb-3 d-flex">
-			  <div class="shadow p-3 menu_box" style="width:615px; height:360px;">
-	            <div class="card-head"> 
-	             <h5>Chat</h5>
-	             <hr style="width:100%; ">
-	            </div>
-	                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-		                 
-	                    
-	                 </div>
-	          </div>
-	         
-	          <div class="shadow ms-3 p-3 menu_box" style="width:615px; height:360px;">
-	            <div class="card-head"> 
-	             <h5>Chat</h5>
-	             <hr style="width:100%; ">
-	            </div>
-	                 <div class="card-body" style="max-height: 300px; overflow:auto;"> 
-		                 
-	                    
-	                 </div>
-	          </div>
-		</div> 
+          <div class="col-lg-8 shadow mx-4 bg-body-tertiary p-5" style="width:1200px; display : flex; justify-content: center; flex-direction : column;">
+            <div class="mt-1"> 
+             <h5>회원가입</h5>
+            </div>
+             <hr style="width:100%;">
+                 <div> 
+                    <form name="newMember" class="form-horizontal"  action="processAddMember.jsp" method="post" onsubmit="return checkForm()">
+			<div class="form-group row mb-2">
+				<label class="col-sm-3 ">아이디</label>
+				<div class="col-sm-3">
+					<input name="id" type="text" class="form-control" placeholder="id" >
+				</div>
+			</div>
+			<div class="form-group row mb-1">
+				<label class="col-sm-3">비밀번호</label>
+				<div class="col-sm-3">
+					<input name="password" type="text" class="form-control" placeholder="password" >
+				</div>
+			</div>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">비밀번호 확인</label>
+				<div class="col-sm-3">
+					<input name="password_confirm" type="text" class="form-control" placeholder="pw confirm" >
+				</div>
+			</div>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">성명</label>
+				<div class="col-sm-3">
+					<input name="name" type="text" class="form-control" placeholder="name" >
+				</div>
+			</div>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">닉네임</label>
+				<div class="col-sm-3">
+					<input name="nickname" type="text" class="form-control" placeholder="nickname" >
+				</div>
+			</div>
+			<div class="form-group  row">
+				<label class="col-sm-3 mb-2">성별</label>
+				<div class="col-sm-8">
+					<input name="gender" type="radio" value="남" /> 남 
+					<input name="gender" type="radio" value="여" /> 여
+				</div>
+			</div>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">생일</label>
+				<div class="col-sm-8  ">
+					<input type="text" name="birthyy" maxlength="4" placeholder="년(4자)" size="6"> 
+					<select name="birthmm">
+						<option value="">월</option>
+						<option value="01">1</option>
+						<option value="02">2</option>
+						<option value="03">3</option>
+						<option value="04">4</option>
+						<option value="05">5</option>
+						<option value="06">6</option>
+						<option value="07">7</option>
+						<option value="08">8</option>
+						<option value="09">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select> <input type="text" name="birthdd" maxlength="2" placeholder="일" size="4">
+				</div>
+			</div>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">이메일</label>
+				<div class="col-sm-8">
+					<input type="text" name="mail1" maxlength="50">@ 
+					<select name="mail2">
+						<option>naver.com</option>
+						<option>daum.net</option>
+						<option>gmail.com</option>
+						<option>nate.com</option>
+					</select>
+				</div>				
+			</div>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">전화번호</label>
+				<div class="col-sm-3">
+					<input name="phone" type="text" class="form-control" placeholder="phone" >
+
+				</div>
+			</div>
+			<div class="form-group row mb-4">
+				<label class="col-sm-3">주소</label>
+				<div class="col-sm-5">
+					<input name="address" type="text" class="form-control" placeholder="address">
+
+				</div>
+			</div>
+			<div class="form-group  row">
+				<div class="col-sm-offset-2 col-sm-10 ">
+					<input type="submit" class="btn btn-primary " value="등록 " > 
+					<input type="reset" class="btn btn-primary " value="취소 " onclick="reset()" >
+				</div>
+			</div>
+		</form>
+                    
+                 </div>
+          </div>
+
+   </div>
        
-	</div>
+
     <div class="footer">
 
 
