@@ -164,7 +164,7 @@
 
 <!-- 	content main 첫번째 줄 차트,챗 -->
 
-<<<<<<< HEAD
+
 	<div class="mb-3 ms-3 d-flex">
 		 <div class="shadow p-3" style="width:615px; height:360px;">
             <%@include file="chart.jsp" %>        
@@ -182,7 +182,7 @@
                  </div>
           </div>
 	</div>
-=======
+
 		<div class="mb-3 ms-3 d-flex">
 			 <div class="shadow p-3 menu_box" style="width:615px; height:360px;">
 	            <div class="card-head"> 
@@ -205,7 +205,7 @@
 	                 </div>
 	          </div>
 		</div>
->>>>>>> refs/remotes/origin/master
+
    
    <!-- 	content main 두번째 줄 뉴스,핫이슈 -->
    
