@@ -27,7 +27,6 @@
 			labels.push("${result.basDt}");
 			data.push("${result.clpr}");
 		
-		
 		</c:forEach>
 		
 		new Chart(ctx, {

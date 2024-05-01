@@ -98,7 +98,7 @@ public class ServerApiController {
         List<NewsApiVO> news = resultVO.getItems();
         
         model.addAttribute("news", news);
-        
+        		
         return "/main/mainPage";
         
     }
