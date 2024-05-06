@@ -6,7 +6,16 @@
 <mapper namespace="com.example.mapper.MemberMapper">
 
 	<insert id="memberJoin">
-		insert into member1 values(#{memberId}, #{memberPw}, #{memberName}, #{memberNick}, #{memberMail}, #{memberAddr1}, #{memberAddr2}, #{memberAddr3}, 0, sysdate, 100000)
+	
+		insert into member1 values(#{memberId}, #{memberPw}, #{memberName}, #{memberNick}, #{memberMail}, #{memberMail1}, #{memberAddr1}, #{memberAddr2}, #{memberAddr3}, 0, sysdate, 100000)
+	
 	</insert>
+	
+	
+	<select id="idCheck" resultType="int">
+	
+		select count(*) from member1 where memberId = #{memberId}
+	
+	</select>
 
 </mapper>

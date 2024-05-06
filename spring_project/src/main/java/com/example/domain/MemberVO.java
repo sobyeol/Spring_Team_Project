@@ -20,6 +20,9 @@ public class MemberVO {
 	//회원 메일
 	private String memberMail;
 	
+	//회원 도메인
+	private String memberMail1;
+	
 	//회원 우편번호
 	private String memberAddr1;
 	

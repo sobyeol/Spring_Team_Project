@@ -11,37 +11,18 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link href="/resources/css/mainPage.css" rel="stylesheet" type="text/css">
-    
-<script type="text/javascript">
-   function checkForm() {
-      if (!document.newMember.id.value) {
-         alert("아이디를 입력하세요.");
-         return false;
-      }
+    <link href="/resources/css/join.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-      if (!document.newMember.password.value) {
-         alert("비밀번호를 입력하세요.");
-         return false;
-      }
-
-      if (document.newMember.password.value != document.newMember.password_confirm.value) {
-         alert("비밀번호를 동일하게 입력하세요.");
-         return false;
-      }
-   }
-</script>
 	
 </head>
 <body>
-
-    
-    
 
     <div class="header">
         <nav class="shadow p-2 bg-body-tertiary border-bottom">
 		    <div class="d-flex justify-content-start">
 			    <div class="d-flex ps-5">
-			    	<a href="main.jsp" class="d-flex align-items-center mb-2 mb-lg-0 text-warning text-decoration-none">
+			    	<a href="../main/mainPage" class="d-flex align-items-center mb-2 mb-lg-0 text-warning text-decoration-none">
 			            <span class="fs-4 fw-bold"><b>BZO</b></span>
 		        	</a>
 			    </div>
@@ -66,7 +47,7 @@
 			       		<input type="submit" class="btn btn-success btn-sm" value="Log in">
 			       		</div>
 			       		<button type="button" class="btn btn-info btn-sm fs-6" style="height:30px;">
-			       			<a href="#" class="text-decoration-none text-light">Sign up</a>
+			       			<a href="/join" class="text-decoration-none text-light">Sign up</a>
 			       		</button>
 			       	
 			        </div>
@@ -136,72 +117,163 @@
             </div>
              <hr style="width:100%;">
                  <div> 
-                    <form name="newMember" class="form-horizontal"  action="processAddMember.jsp" method="post" onsubmit="return checkForm()">
-			<div class="form-group row mb-2">
-				<label class="col-sm-3 ">아이디</label>
-				<div class="col-sm-3">
-					<input name="id" type="text" class="form-control" placeholder="id" >
-				</div>
-			</div>
-			<div class="form-group row mb-1">
-				<label class="col-sm-3">비밀번호</label>
-				<div class="col-sm-3">
-					<input name="password" type="text" class="form-control" placeholder="password" >
-				</div>
-			</div>
-			<div class="form-group row mb-2">
-				<label class="col-sm-3">비밀번호 확인</label>
-				<div class="col-sm-3">
-					<input name="password_confirm" type="text" class="form-control" placeholder="pw confirm" >
-				</div>
-			</div>
-			<div class="form-group row mb-2">
-				<label class="col-sm-3">성명</label>
-				<div class="col-sm-3">
-					<input name="name" type="text" class="form-control" placeholder="name" >
-				</div>
-			</div>
-			<div class="form-group row mb-2">
-				<label class="col-sm-3">닉네임</label>
-				<div class="col-sm-3">
-					<input name="nickname" type="text" class="form-control" placeholder="nickname" >
-				</div>
-			</div>
-			<div class="form-group row mb-2">
-				<label class="col-sm-3">이메일</label>
-				<div class="col-sm-8">
-					<input type="text" name="mail1" maxlength="50">@ 
-					<select name="mail2">
-						<option>naver.com</option>
-						<option>daum.net</option>
-						<option>gmail.com</option>
-						<option>nate.com</option>
-					</select>
-				</div>				
-			</div>
-			<div class="form-group row mb-2">
-				<label class="col-sm-3">전화번호</label>
-				<div class="col-sm-3">
-					<input name="phone" type="text" class="form-control" placeholder="phone" >
-
-				</div>
-			</div>
-			<div class="form-group row mb-4">
-				<label class="col-sm-3">주소</label>
-				<div class="col-sm-5">
-					<input name="address" type="text" class="form-control" placeholder="address">
-
-				</div>
-			</div>
-			<div class="form-group  row">
-				<div class="col-sm-offset-2 col-sm-10 ">
-					<input type="submit" class="btn btn-primary " value="등록 " > 
-					<input type="reset" class="btn btn-primary " value="취소 " onclick="reset()" >
-				</div>
-			</div>
-		</form>
+                    <form class="form-horizontal" id="join_form" method="post">
+						<div class="form-group row mb-2">
+							<label class="col-sm-3 ">아이디</label>
+							<div class="col-sm-3">
+								<input class="id_input form-control" name="memberId">
+							</div>
+							<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
+							<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
+						</div>
+						<div class="form-group row mb-1">
+							<label class="col-sm-3">비밀번호</label>
+							<div class="col-sm-3">
+								<input class="pw_input form-control" name="memberPw">
+							</div>
+						</div>
+						<div class="form-group row mb-2">
+							<label class="col-sm-3">비밀번호 확인</label>
+							<div class="col-sm-3">
+								<input name="pwc" class="pwc form-control" >
+							</div>
+						</div>
+						<div class="form-group row mb-2">
+							<label class="col-sm-3">성명</label>
+							<div class="col-sm-3">
+								<input class="name_input form-control" name="memberName">
+							</div>
+						</div>
+						<div class="form-group row mb-2">
+							<label class="col-sm-3">닉네임</label>
+							<div class="col-sm-3">
+								<input class="nick_input form-control" name="memberNick" >
+							</div>
+						</div>
+						<div class="form-group row mb-2">
+							<label class="col-sm-3">이메일</label>
+							<div class="col-sm-4">
+								<input name="memberMail" class="mail_input">@ 
+								<select name="memberMail1" class="mail1_input">
+									<option>naver.com</option>
+									<option>daum.net</option>
+									<option>gmail.com</option>
+									<option>nate.com</option>
+								</select>
+							</div>				
+						</div>
+						<div class="form-group row mb-4">
+							<label class="col-sm-3">우편번호</label>
+							<div class="col-sm-5">
+								<input name="memberAddr1" class="address_input_1" readonly="readonly">
+								<div class="address_button btn btn-primary-sm" onclick="execution_daum_address()">주소찾기</div>
+							</div>
+						</div>
+						<div class="form-group row mb-4">
+							<label class="col-sm-3">주소</label>
+							<div class="col-sm-5">
+								<input name="memberAddr2" class="address_input_2 form-control" readonly="readonly">
+			
+							</div>
+						</div>
+						<div class="form-group row mb-4">
+							<label class="col-sm-3">상세주소</label>
+							<div class="col-sm-5">
+								<input name="memberAddr3" class="address_input_3 form-control" readonly="readonly">
+			
+							</div>
+						</div>
+						<div class="form-group  row">
+							<div class="col-sm-offset-2 col-sm-10 ">
+								<input type="submit" class="btn btn-primary join_button" value="가입하기" > 
+							</div>
+						</div>
+					</form>
                     
                  </div>
+                 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+                 <script>
+
+					$(document).ready(function(){
+						//회원가입 버튼(회원가입 기능 작동)
+						$(".join_button").click(function(){
+							$("#join_form").attr("action", "/member/join");
+							$("#join_form").submit();
+						});
+					});
+					//아이디 중복검사
+					$('.id_input').on("propertychange change keyup paste input", function(){
+						
+// 						console.log("keyup 테스트");
+						var memberId = $('.id_input').val();
+						var data = {memberId : memberId}
+						
+						$.ajax({
+							type : "post",
+							url : "/member/memberIdChk",
+							data : data,
+							success : function(result){
+								// console.log("성공 여부" + result);
+								if(result != 'fail'){
+									$('.id_input_re_1').css("display","inline-block");
+									$('.id_input_re_2').css("display", "none");				
+								} else {
+									$('.id_input_re_2').css("display","inline-block");
+									$('.id_input_re_1').css("display", "none");				
+								}
+							}
+						});
+						
+					}); //function 종료
+					
+					/* 다음 주소 연동 */
+					function execution_daum_address(){
+						new daum.Postcode({
+				        	oncomplete: function(data) { 
+				        		// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+				                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				                var addr = ''; // 주소 변수
+				                var extraAddr = ''; // 참고항목 변수
+				 
+				                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+				                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+				                    addr = data.roadAddress;
+				                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+				                    addr = data.jibunAddress;
+				                }
+				 
+				                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+				                if(data.userSelectedType === 'R'){
+				                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+				                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+				                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+				                        extraAddr += data.bname;
+				                    }
+				                    // 건물명이 있고, 공동주택일 경우 추가한다.
+				                    if(data.buildingName !== '' && data.apartment === 'Y'){
+				                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+				                    }
+				                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+				                    if(extraAddr !== ''){
+				                        extraAddr = ' (' + extraAddr + ')';
+				                    }
+				                    // 주소변수 문자열과 참고항목 문자열 합치기.
+				                    addr += extraAddr;
+				                
+				                } else {
+				                	addr += ' ';
+				                }
+				 
+				                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+				                $(".address_input_1").val(data.zonecode);
+				                $(".address_input_2").val(addr);
+				             	// 상세주소 입력란 disabled 속성 변경 및 커서를 상세주소 필드로 이동한다.
+				                $(".address_input_3").attr("readonly",false);
+				                $(".address_input_3").focus();
+				        	}
+						}).open();
+					}
+				</script>
           </div>
 
    </div>

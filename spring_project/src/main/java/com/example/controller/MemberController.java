@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.domain.MemberVO;
 import com.example.service.MemberService;
@@ -41,7 +42,29 @@ public class MemberController {
 			
 			logger.info("join Service 성공");
 			
-			return "redirect:/main";
+			return "redirect:/main/mainPage";
+			
+		}
+		
+		@PostMapping("/memberIdChk")
+		@ResponseBody
+		public String memberIdChkPOST(String memberId) {
+			
+			logger.info("memberIdChk() 진입");
+			
+			int result = memberservice.idCheck(memberId);
+			
+			logger.info("결과값 = " + result);
+			
+			if(result != 0) {
+				
+				return "fail";	// 중복 아이디가 존재
+				
+			} else {
+				
+				return "success";	// 중복 아이디 x
+				
+			}	
 			
 		}
 		

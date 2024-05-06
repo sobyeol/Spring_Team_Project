@@ -1,4 +1,4 @@
-package com.example.mapper;
+package com.example.service;
 
 import org.springframework.stereotype.Service;
 
@@ -19,6 +19,13 @@ public class MemberServiceImpl implements MemberService {
 		
 		membermapper.memberJoin(member);
 
+	}
+
+	@Override
+	public int idCheck(String memberId) {
+		
+		return membermapper.idCheck(memberId);
+		
 	}
 
 }
