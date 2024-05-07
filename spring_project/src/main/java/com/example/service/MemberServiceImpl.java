@@ -2,7 +2,6 @@ package com.example.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.domain.LoginVO;
 import com.example.domain.MemberVO;
 import com.example.mapper.MemberMapper;
 
@@ -30,7 +29,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO memberLogin(LoginVO member) {
+	public MemberVO memberLogin(MemberVO member) {
 		
 		return membermapper.memberLogin(member);
 		

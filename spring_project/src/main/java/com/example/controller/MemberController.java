@@ -73,12 +73,21 @@ public class MemberController {
 		
 		
 		
-		//로그인 페이지 이동
-//		@RequestMapping(value = "login", method = RequestMethod.GET)
+//		/* 로그인 페이지 이동 */
+//		@GetMapping("login")
 //		public void joinGET() {
 //			
 //			logger.info("로그인 페이지 진입");
 //			
 //		}
+		
+//		@PostMapping("/login")
+//	    public String loginPOST(HttpServletRequest request, LoginVO member, RedirectAttributes rttr) {
+//	        
+//	        System.out.println("login 메서드 진입");
+//	        System.out.println("전달된 데이터 : " + member);
+//	        
+//	        return null;
+//	    }
 
 }

@@ -1,6 +1,5 @@
 package com.example.mapper;
 
-import com.example.domain.LoginVO;
 import com.example.domain.MemberVO;
 
 public interface MemberMapper {
@@ -12,6 +11,6 @@ public interface MemberMapper {
 	public int idCheck(String memberId);
 	
 	//로그인
-	public MemberVO memberLogin(LoginVO member);
+	public MemberVO memberLogin(MemberVO member);
 
 }

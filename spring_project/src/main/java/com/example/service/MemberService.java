@@ -1,6 +1,5 @@
 package com.example.service;
 
-import com.example.domain.LoginVO;
 import com.example.domain.MemberVO;
 
 public interface MemberService {
@@ -9,6 +8,6 @@ public interface MemberService {
 	
 	public int idCheck(String memberId);
 	
-	public MemberVO memberLogin(LoginVO member);
+	public MemberVO memberLogin(MemberVO member);
 
 }

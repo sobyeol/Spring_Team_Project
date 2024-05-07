@@ -72,6 +72,8 @@
         <div class="content_left_bar">
 
             <div class="cl_user_info">
+<!--             로그인 하지 않은 상태 -->
+				<c:if test = "${member == null }">
 				 <span class="fs-4">Login</span>
 		         <hr>
 		         	<div class="d-flex justify-content-center flex-column">
@@ -81,16 +83,19 @@
 							<div class="login_wrap">
 								<div class="id_wrap">
 									<div class="id_input_box">
-										<input class="id_input">
+										<input class="id_input" name="memberId">
 									</div>
 								</div>
 								<div class="pw_wrap">
 									<div class="pw_input_box">
-										<input class="pw_input">
+										<input class="pw_iput" name="memberPw">
 									</div>
 								</div>
+								<c:if test = "${result == 0 }">
+									<div class = "login_warn">사용자의 ID 또는 비밀번호가 잘못 입력되었습니다.</div>
+								</c:if>
 								<div class="login_button_wrap">
-									<input type="submit" class="login_button btn btn-success btn-sm" value="Log in">
+									<input type="button" class="login_button btn btn-success btn-sm" value="Log in">
 						       		<button type="button" class="btn btn-info btn-sm fs-6" style="height:30px;">
 						       			<a href="../member/join" class="text-decoration-none text-light">Sign up</a>
 						       		</button>
@@ -98,7 +103,17 @@
 							</div>
 						</form>
 			        </div>
-				   <hr>
+		        </c:if>
+		        <!-- 로그인 한 상태 -->
+		        <c:if test="${ member != null }">
+		        <span class="fs-4">member</span>
+		         <hr>
+		        	<div class = "login_success_area">
+		        		<span>닉네임 : ${member.memberNick}</span>
+		        		<span>모의전 금액 : <fmt:formatNumber value="${member.money}" pattern="\#,###,###"/></span>
+		        	</div>
+		        </c:if>
+			   <hr>
             </div>
 		
             <div class="cl_nav_bar">

@@ -25,7 +25,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.example.domain.LoginVO;
 import com.example.domain.MemberVO;
 import com.example.domain.NewsApiVO;
 import com.example.domain.ServerApiVO;
@@ -45,7 +44,7 @@ import lombok.extern.slf4j.Slf4j;
 @AllArgsConstructor
 public class ServerApiController {
 	
-	private final MemberService memberservice;
+	MemberService memberservice;
     
 	@GetMapping("/mainPage")
 	public void mainPage(Model model) {
@@ -196,12 +195,28 @@ public class ServerApiController {
         return "/main/mainPage";
     }
     
-    
+    @PostMapping("/mainPage")
+    public String loginPOST(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) {
+        
+//        System.out.println("login 메서드 진입");
+//        System.out.println("전달된 데이터 : " + member);
+    	 HttpSession session = request.getSession();
+    	 MemberVO lvo = memberservice.memberLogin(member);
+    	
+    		if(lvo == null) {                                // 일치하지 않는 아이디, 비밀번호 입력 경우
+            
+            int result = 0;
+            rttr.addFlashAttribute("result", result);
+            return "redirect:/main/mainPage";
+            
+        }
+        
+        session.setAttribute("member", lvo);             // 일치하는 아이디, 비밀번호 경우 (로그인 성공)
+        
+        return "redirect:/main/mainPage";
+    }
    
 	
     	
-	}
-   
-
-
 }
+   
