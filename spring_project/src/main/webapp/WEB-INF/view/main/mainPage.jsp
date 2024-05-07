@@ -74,21 +74,30 @@
             <div class="cl_user_info">
 				 <span class="fs-4">Login</span>
 		         <hr>
-		         <form>
 		         	<div class="d-flex justify-content-center flex-column">
-				        <p>ID : <input type="text" name="ID" size="15" required></p>
-				        <p>PW : <input type="password" name="psw" size="15" placeholder="비밀번호" required></p>
+<!-- 				        <p>ID : <input type="text" name="ID" size="15" required></p> -->
+<!-- 				        <p>PW : <input type="password" name="psw" size="15" placeholder="비밀번호" required></p> -->
+						<form id="login_form" method="post">
+							<div class="login_wrap">
+								<div class="id_wrap">
+									<div class="id_input_box">
+										<input class="id_input">
+									</div>
+								</div>
+								<div class="pw_wrap">
+									<div class="pw_input_box">
+										<input class="pw_input">
+									</div>
+								</div>
+								<div class="login_button_wrap">
+									<input type="submit" class="login_button btn btn-success btn-sm" value="Log in">
+						       		<button type="button" class="btn btn-info btn-sm fs-6" style="height:30px;">
+						       			<a href="../member/join" class="text-decoration-none text-light">Sign up</a>
+						       		</button>
+								</div>
+							</div>
+						</form>
 			        </div>
-			        <div class="d-flex justify-content-center">
-			        	<div class="pe-3">
-			       		<input type="submit" class="btn btn-success btn-sm" value="Log in">
-			       		</div>
-			       		<button type="button" class="btn btn-info btn-sm fs-6" style="height:30px;">
-			       			<a href="#" class="text-decoration-none text-light">Sign up</a>
-			       		</button>
-			       	
-			        </div>
-				   </form>
 				   <hr>
             </div>
 		
@@ -228,7 +237,17 @@
 	          </div>
 		</div>   
 	</div>
-   
+   	<script>
+ 
+    /* 로그인 버튼 클릭 메서드 */
+    $(".login_button").click(function(){
+        
+    	 $("#login_form").attr("action", "/main/mainPage");
+         $("#login_form").submit()
+        
+    });
+ 
+</script>
    
   
 

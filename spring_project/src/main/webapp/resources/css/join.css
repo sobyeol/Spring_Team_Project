@@ -4,9 +4,52 @@
 .id_input_re_1{
 	color : green;
 	display : none;
+	font-size : 12px;
 }
 /* 중복아이디 존재하는 경우 */
 .id_input_re_2{
 	color : red;
 	display : none;
+	font-size : 12px;
+}
+
+/* 비밀번호 확인 일치 유효성검사 */
+.pwck_input_re_1{
+        color : green;
+        display : none;
+        font-size : 12px;    
+}
+.pwck_input_re_2{
+        color : red;
+        display : none; 
+        font-size : 12px;   
+}    
+
+.final_id_ck{
+    display: none;
+    font-size : 12px;
+}
+.final_pw_ck{
+    display: none;
+    font-size : 12px;
+}
+.final_pwck_ck{
+    display: none;
+    font-size : 12px;
+}
+.final_name_ck{
+    display: none;
+    font-size : 12px;
+}
+.final_nick_ck{
+    display: none;
+    font-size : 12px;
+}
+.final_mail_ck{
+    display: none;
+    font-size : 12px;
+}
+.final_addr_ck{
+    display: none;
+    font-size : 12px;
 }

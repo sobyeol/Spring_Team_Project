@@ -1,6 +1,8 @@
 package com.example.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.domain.MemberVO;
 import com.example.service.MemberService;
@@ -67,6 +70,8 @@ public class MemberController {
 			}	
 			
 		}
+		
+		
 		
 		//로그인 페이지 이동
 //		@RequestMapping(value = "login", method = RequestMethod.GET)

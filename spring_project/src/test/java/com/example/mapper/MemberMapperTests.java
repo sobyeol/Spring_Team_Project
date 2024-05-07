@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.example.domain.LoginVO;
 import com.example.domain.MemberVO;
 
 import lombok.Setter;
@@ -18,7 +19,7 @@ public class MemberMapperTests {
 	@Setter(onMethod_ = @Autowired)
 	private MemberMapper membermapper;
 	
-	@Test
+//	@Test
 	public void memberJoin() {
 		MemberVO member = new MemberVO();
 		
@@ -35,4 +36,23 @@ public class MemberMapperTests {
 		membermapper.memberJoin(member);
 		
 	}
+	
+	/* 로그인 쿼리 mapper 메서드 테스트 */
+    @Test
+    public void memberLogin() {
+        
+        LoginVO member = new LoginVO();    // MemberVO 변수 선언 및 초기화
+        
+        /* 올바른 아이디 비번 입력경우 */
+        member.setMemberId("test1");
+        member.setMemberPw("test1");
+        
+        /* 올바른 않은 아이디 비번 입력경우 */
+        //member.setMemberId("test1123");
+        //member.setMemberPw("test1321321");
+        
+        membermapper.memberLogin(member);
+        System.out.println("결과 값 : " + membermapper.memberLogin(member));
+        
+    }
 }

@@ -2,6 +2,7 @@ package com.example.service;
 
 import org.springframework.stereotype.Service;
 
+import com.example.domain.LoginVO;
 import com.example.domain.MemberVO;
 import com.example.mapper.MemberMapper;
 
@@ -12,7 +13,7 @@ import lombok.AllArgsConstructor;
 public class MemberServiceImpl implements MemberService {
 
 	
-	MemberMapper membermapper;
+	private final MemberMapper membermapper;
 	
 	@Override
 	public void memberJoin(MemberVO member) {
@@ -25,6 +26,13 @@ public class MemberServiceImpl implements MemberService {
 	public int idCheck(String memberId) {
 		
 		return membermapper.idCheck(memberId);
+		
+	}
+
+	@Override
+	public MemberVO memberLogin(LoginVO member) {
+		
+		return membermapper.memberLogin(member);
 		
 	}
 

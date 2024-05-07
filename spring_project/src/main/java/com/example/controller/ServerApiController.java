@@ -1,44 +1,51 @@
 package com.example.controller;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.json.simple.JSONArray;
-
-import org.springframework.http.HttpMethod;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.example.domain.LoginVO;
+import com.example.domain.MemberVO;
 import com.example.domain.NewsApiVO;
 import com.example.domain.ServerApiVO;
 import com.example.domain.chartApiVO;
-import com.example.domain.chartServerApiVO;
+import com.example.service.MemberService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j
 @Controller
 @RequestMapping("/main/*")
+@AllArgsConstructor
 public class ServerApiController {
+	
+	private final MemberService memberservice;
     
 	@GetMapping("/mainPage")
 	public void mainPage(Model model) {
@@ -188,8 +195,12 @@ public class ServerApiController {
         
         return "/main/mainPage";
     }
-
-
+    
+    
+   
+	
+    	
+	}
    
 
 

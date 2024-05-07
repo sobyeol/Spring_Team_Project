@@ -125,30 +125,37 @@
 							</div>
 							<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
 							<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
+							<span class="final_id_ck">아이디를 입력해주세요.</span>
 						</div>
 						<div class="form-group row mb-1">
 							<label class="col-sm-3">비밀번호</label>
 							<div class="col-sm-3">
-								<input class="pw_input form-control" name="memberPw">
+								<input class="pw_input form-control" name="memberPw" type="password">
 							</div>
+							<span class="final_pw_ck">비밀번호를 입력해주세요.</span>
 						</div>
 						<div class="form-group row mb-2">
 							<label class="col-sm-3">비밀번호 확인</label>
 							<div class="col-sm-3">
-								<input name="pwc" class="pwc form-control" >
+								<input class="pwck_input form-control" name="pwc" type="password">
 							</div>
+							<span class="final_pwck_ck">비밀번호를 확인 해주세요.</span>
+							<span class="pwck_input_re_1">비밀번호가 일치합니다.</span>
+							<span class="pwck_input_re_2">비밀번호가 일치하지 않습니다.</span>
 						</div>
 						<div class="form-group row mb-2">
 							<label class="col-sm-3">성명</label>
 							<div class="col-sm-3">
-								<input class="name_input form-control" name="memberName">
+								<input class="user_input form-control" name="memberName">
 							</div>
+							<span class="final_name_ck">이름을 입력해주세요.</span>
 						</div>
 						<div class="form-group row mb-2">
 							<label class="col-sm-3">닉네임</label>
 							<div class="col-sm-3">
 								<input class="nick_input form-control" name="memberNick" >
 							</div>
+							<span class="final_nick_ck">닉네임을 입력해주세요.</span>
 						</div>
 						<div class="form-group row mb-2">
 							<label class="col-sm-3">이메일</label>
@@ -160,7 +167,8 @@
 									<option>gmail.com</option>
 									<option>nate.com</option>
 								</select>
-							</div>				
+							</div>
+							<span class="final_mail_ck">이메일을 입력해주세요.</span>				
 						</div>
 						<div class="form-group row mb-4">
 							<label class="col-sm-3">우편번호</label>
@@ -180,8 +188,8 @@
 							<label class="col-sm-3">상세주소</label>
 							<div class="col-sm-5">
 								<input name="memberAddr3" class="address_input_3 form-control" readonly="readonly">
-			
 							</div>
+							<span class="final_addr_ck">주소를 입력해주세요.</span>
 						</div>
 						<div class="form-group  row">
 							<div class="col-sm-offset-2 col-sm-10 ">
@@ -193,18 +201,108 @@
                  </div>
                  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
                  <script>
-
+					
+                 	/* 유효성 검사 통과유무 변수 */
+					var idCheck = false;
+					var idckCheck = false;
+					var pwCheck = false;
+					var pwckCheck = false;
+					var pwckcorCheck = false;
+					var nameCheck = false;
+					var nickCheck = false;
+					var mailCheck = false;
+					var addressCheck = false;
+                 	
 					$(document).ready(function(){
 						//회원가입 버튼(회원가입 기능 작동)
 						$(".join_button").click(function(){
-							$("#join_form").attr("action", "/member/join");
-							$("#join_form").submit();
+							
+							var id = $('.id_input').val();
+							var pw = $('.pw_input').val();
+							var pwck = $('.pwck_input').val();
+							var name = $('.user_input').val();
+							var nick = $('.nick_input').val();
+							var mail = $('.mail_input').val();
+							var addr = $('.address_input_3').val();
+							
+							/* 아이디 유효성검사 */
+					        if(id == ""){
+					            $('.final_id_ck').css('display','block');
+					            idCheck = false;
+					        }else{
+					            $('.final_id_ck').css('display', 'none');
+					            idCheck = true;
+					        }
+							
+					        /* 비밀번호 유효성 검사 */
+					        if(pw == ""){
+					            $('.final_pw_ck').css('display','block');
+					            pwCheck = false;
+					        }else{
+					            $('.final_pw_ck').css('display', 'none');
+					            pwCheck = true;
+					        }
+					        
+					        /* 비밀번호 확인 유효성 검사 */
+					        if(pwck == ""){
+					            $('.final_pwck_ck').css('display','block');
+					            pwckCheck = false;
+					        }else{
+					            $('.final_pwck_ck').css('display', 'none');
+					            pwckCheck = true;
+					        }
+					        
+					        /* 이름 유효성 검사 */
+					        if(name == ""){
+					            $('.final_name_ck').css('display','block');
+					            nameCheck = false;
+					        }else{
+					            $('.final_name_ck').css('display', 'none');
+					            nameCheck = true;
+					        }
+					        
+					        /* 닉네임 유효성 검사 */
+					        if(nick == ""){
+					            $('.final_nick_ck').css('display','block');
+					            nickCheck = false;
+					        }else{
+					            $('.final_nick_ck').css('display', 'none');
+					            nickCheck = true;
+					        }
+					        
+					        /* 이메일 유효성 검사 */
+					        if(mail == ""){
+					            $('.final_mail_ck').css('display','block');
+					            mailCheck = false;
+					        }else{
+					            $('.final_mail_ck').css('display', 'none');
+					            mailCheck = true;
+					        }
+					        
+					        /* 주소 유효성 검사 */
+					        if(addr == ""){
+					            $('.final_addr_ck').css('display','block');
+					            addressCheck = false;
+					        }else{
+					            $('.final_addr_ck').css('display', 'none');
+					            addressCheck = true;
+					        }
+					        
+					        /* 최종 유효성 검사 */
+					        if(idCheck&&idckCheck&&pwCheck&&pwckCheck&&pwckcorCheck&&nameCheck&&nickCheck&&mailCheck&&addressCheck ){
+					 
+					        	$("#join_form").attr("action", "/member/join");
+					            $("#join_form").submit();
+					            
+					        }  
+					        
+					        return false;
 						});
 					});
 					//아이디 중복검사
 					$('.id_input').on("propertychange change keyup paste input", function(){
 						
-// 						console.log("keyup 테스트");
+						/* console.log("keyup 테스트"); */
 						var memberId = $('.id_input').val();
 						var data = {memberId : memberId}
 						
@@ -216,10 +314,12 @@
 								// console.log("성공 여부" + result);
 								if(result != 'fail'){
 									$('.id_input_re_1').css("display","inline-block");
-									$('.id_input_re_2').css("display", "none");				
+									$('.id_input_re_2').css("display", "none");		
+									idckCheck = true;
 								} else {
 									$('.id_input_re_2').css("display","inline-block");
-									$('.id_input_re_1').css("display", "none");				
+									$('.id_input_re_1').css("display", "none");
+									idckCheck = false;
 								}
 							}
 						});
@@ -273,6 +373,27 @@
 				        	}
 						}).open();
 					}
+					
+					/* 비밀번호 확인 일치 유효성 검사 */
+					 
+					$('.pwck_input').on("propertychange change keyup paste input", function(){
+					     
+						var pw = $('.pw_input').val();
+					    var pwck = $('.pwck_input').val();
+					    $('.final_pwck_ck').css('display', 'none');
+					    
+					    if(pw == pwck){
+					        $('.pwck_input_re_1').css('display','block');
+					        $('.pwck_input_re_2').css('display','none');
+					        pwckcorCheck = true;
+					    }else{
+					        $('.pwck_input_re_1').css('display','none');
+					        $('.pwck_input_re_2').css('display','block');
+					        pwckcorCheck = false;
+					    }        
+					    
+					});  
+					
 				</script>
           </div>
 
