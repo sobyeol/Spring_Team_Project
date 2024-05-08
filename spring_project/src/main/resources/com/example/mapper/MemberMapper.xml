@@ -26,5 +26,12 @@
 		SELECT MEMBERID, MEMBERNICK, ADMINCK, MONEY FROM member1 where MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
 	
 	</select>
+	
+	<!-- 회원 수정 -->
+	<update id="memberUpdate">
+		
+		UPDATE MEMBER1 SET MEMBERPW = #{memberPw}, MEMBERNAME = #{memberName} WHERE MEMBERID = #{memberId}
+		
+	</update>
 
 </mapper>

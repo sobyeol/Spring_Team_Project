@@ -216,7 +216,5 @@ public class ServerApiController {
         return "redirect:/main/mainPage";
     }
    
-	
-    	
 }
    
