@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%@include file="../include/sidebar.jsp"%>
+<%@include file="../include/mainPage2.jsp"%>
 <link href="../resources/css/list.css" rel="stylesheet" type="text/css">
 
 <br/>
@@ -33,21 +33,21 @@
 									</div><br/>
 
 									<div class="form-group">
-										<label>이름</label> <input class="form-control" name='name'>
-									</div><br/>
-
-									<div class="form-group">
 										<label>내용</label>
 										<textarea class="form-control" rows="7" name='content'></textarea>
 									</div><br/>
 									
 									<div class="form-group">
-										<label>닉네임</label> <br/><input class="form-control" name='writer'>
+										<label>이름</label> <input class="form-control" name='name'>
+									</div><br/>
+									
+									<div class="form-group">
+										<label>닉네임</label> <br/><input class="form-control" name='nickname'>
 									</div><br/>
 
-									<div class="form-group">
-										<label>아이디</label> <input class="form-control" name='id'>
-									</div><br/>
+<!-- 									<div class="form-group"> -->
+<!-- 										<label>아이디</label> <input class="form-control" name='id'> -->
+<!-- 									</div><br/> -->
 									
 									<div class="form-group">
 										<div style=" text-align: center;">
@@ -74,6 +74,5 @@
 			</div>
 		</div>
 	</div>
-	<%@include file="../include/sidebar2.jsp"%>
 
 </html>
