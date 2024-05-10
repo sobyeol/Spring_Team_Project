@@ -31,10 +31,6 @@ public class CompanyController {
 	private CompanyBoardService boardservice;
 	
 	
-	
-
-	
-	
 	@GetMapping("/companyList")
 	public void companyList(Criteria cri, Model model) {
 		log.info("companyList: "+cri);
