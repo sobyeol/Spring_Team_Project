@@ -2,6 +2,8 @@ package com.example.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.example.domain.BoardVO;
 import com.example.domain.Criteria;
 
@@ -20,4 +22,6 @@ public interface BoardService {
 	public List<BoardVO> getList(Criteria cri);
 	
 	public int getTotal(Criteria cri);
+	
+	 public void hit(int bno, HttpSession session) throws Exception;
 }
