@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
                                         
+=======
+                                            
+    
+>>>>>>> refs/remotes/origin/master
     
     
     
@@ -9,7 +14,12 @@
     
     
     <wb-module deploy-name="spring_project-0.0.1-SNAPSHOT">
+<<<<<<< HEAD
                                                                                 
+=======
+                                                                                        
+        
+>>>>>>> refs/remotes/origin/master
         
         
         
@@ -19,7 +29,12 @@
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+<<<<<<< HEAD
                                                                                 
+=======
+                                                                                        
+        
+>>>>>>> refs/remotes/origin/master
         
         
         
@@ -29,7 +44,12 @@
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+<<<<<<< HEAD
                                                                                 
+=======
+                                                                                        
+        
+>>>>>>> refs/remotes/origin/master
         
         
         
@@ -39,6 +59,7 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD
                                                                                 
         
         
@@ -48,8 +69,15 @@
         
         
         
+=======
+>>>>>>> refs/remotes/origin/master
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+<<<<<<< HEAD
                                                                                 
+=======
+                                                                                        
+        
+>>>>>>> refs/remotes/origin/master
         
         
         
@@ -59,9 +87,15 @@
         
         
         <property name="java-output-path" value="/spring_project/build/classes"/>
+<<<<<<< HEAD
                 
         <property name="context-root" value="spring_project"/>
                                                                             
+=======
+        <property name="context-root" value="spring_project"/>
+                                                                                    
+    
+>>>>>>> refs/remotes/origin/master
     
     
     
@@ -71,7 +105,12 @@
     
     
     </wb-module>
+<<<<<<< HEAD
                                     
+=======
+                                        
+
+>>>>>>> refs/remotes/origin/master
 
 
 
