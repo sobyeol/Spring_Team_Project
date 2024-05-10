@@ -48,6 +48,7 @@ public class BoardMapperTests {
 		board.setTitle("새로 작성하는 글 select key");
 		board.setContent("새로 작성하는 내용 select key");
 		board.setWriter("newbie");
+		board.setNickname("새로운닉네임");
 		
 		mapper.insertSelectKey(board);
 		
@@ -67,7 +68,7 @@ public class BoardMapperTests {
 //	@Test
 	public void testDelete()
 	{
-		log.info("DELETE COUNT: " + mapper.delete(402L));
+		log.info("DELETE COUNT: " + mapper.delete(403L));
 	}
 
 //	@Test
@@ -78,7 +79,7 @@ public class BoardMapperTests {
 		board.setBno(404L);
 		board.setTitle("수정된 제목");
 		board.setContent("수정된 내용");
-		board.setWriter("uesr00");
+		board.setWriter("uesr");
 		
 		int count = mapper.update(board);
 		log.info("UPDATE COUNT: "+ count);
