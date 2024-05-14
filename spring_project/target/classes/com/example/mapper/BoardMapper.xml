@@ -61,7 +61,7 @@
 		update
 				board 
 		set
-				title= #{title}, content= #{content}, writer = #{writer}, updateDate = sysdate
+				title= #{title}, content= #{content}, writer = #{writer}, updatedate = sysdate
 		where
 				bno = #{bno}
 	</update>
@@ -72,7 +72,7 @@
 				bno, title, content, writer, regdate, updatedate, hit, nickname
 		from (
 				select
-						/*+INDEX_DESC(tbl_board board_pk) */ rownum rn,
+						/*+INDEX_DESC(board board_pk) */ rownum rn,
 						bno, title, content, writer, regdate, updatedate, hit, nickname
 				from
 						board
@@ -99,7 +99,7 @@
 <!-- 		</trim> -->
 		
 	<![CDATA[		
-						rownum <= #{pageNum} * #{amount}
+				rownum <= #{pageNum} * #{amount}
 			)
 		where
 				rn > (#{pageNum} -1) * #{amount}
@@ -132,4 +132,12 @@
 		bno > 0		
 	</select>
 	
+	<update id="boardHit" parameterType="int">
+		update 
+				board 
+		set 
+				hit = hit + 1
+		where 
+				bno = #{bno}		
+	</update>
 </mapper>

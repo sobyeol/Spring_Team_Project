@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
                                             
     
+=======
+                                        
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
     
     
     
@@ -10,8 +14,12 @@
     
     
     <wb-module deploy-name="spring_project-0.0.1-SNAPSHOT">
+<<<<<<< HEAD
                                                                                         
         
+=======
+                                                                                
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
         
         
         
@@ -21,8 +29,12 @@
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+<<<<<<< HEAD
                                                                                         
         
+=======
+                                                                                
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
         
         
         
@@ -32,8 +44,12 @@
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+<<<<<<< HEAD
                                                                                         
         
+=======
+                                                                                
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
         
         
         
@@ -43,9 +59,25 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD
+=======
+                                                                                
+        
+        
+        
+        
+        
+        
+        
+        
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+<<<<<<< HEAD
                                                                                         
         
+=======
+                                                                                
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
         
         
         
@@ -55,9 +87,15 @@
         
         
         <property name="java-output-path" value="/spring_project/build/classes"/>
+<<<<<<< HEAD
         <property name="context-root" value="spring_project"/>
                                                                                     
     
+=======
+                
+        <property name="context-root" value="spring_project"/>
+                                                                            
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
     
     
     
@@ -67,8 +105,12 @@
     
     
     </wb-module>
+<<<<<<< HEAD
                                         
 
+=======
+                                    
+>>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
 
 
 

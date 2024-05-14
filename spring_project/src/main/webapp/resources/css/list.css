@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* 자유게시판 (content.jsp)에 사용한 css */
+
+
+
+#title {
+  border-radius: 20px;
+  text-align: center;
+  color: #787878; 
+  background-color: #F4FFFF; 
+  font-size: 30px;
+  width: 400px;
+  height:60px;
+  padding:5px;
+  margin:30px 450px auto;
+  position: relative;
+  font-weight: bold;
+}
+
+.btnn{
+	background-color: transparent;
+	border: 0.5px solid #000000;
+	color: #000000; 
+	border-radius: 5px;
+	transition: all 0.3s ease 0s;
+	cursor: pointer; 
+}
+
+#category {
+	border-radius: 30px 0 0 30px;
+	background-color:#F4FFFF; 
+	width: 150px;
+  	height:30px;
+  	margin-left:50px;
+}
+
+/* #content{ */
+/* 	margin-left:80px; */
+/* } */
+#b1 {
+	border-radius:0 20px 20px 0;
+	background-color:#F4FFFF; 
+}
+
+/* 검색창 css /////////////////////*/
+#s1{
+	 margin-left:750px;
+	 position: relative;
+	 
+        
+}
+
+/* 게시글 작성(register.jsp) css */
+
+#r1{
+	border-radius: 10px;
+	width: 1200px;
+	height:730px;
+	position: sticky;
+	display:inline-block;
+	justify-content: center;
+	box-shadow: 0px 0px 10px #808080;
+}
+.page-header{
+	font-weight: bold;
+	font-size: 30px;
+	 text-align: center;
+}
+/* .form-group{ */
+/* 	width: 800px; */
+/* 	margin-left:auto; */
+/* 	margin-right:auto; */
+	
+/* } */
+
+
+/* 게시글 1개조회(get.jsp)css */
+#g1{
+	border-radius: 10px;
+	width: 1200px;
+	height:730px;
+	position: sticky;
+	display:inline-block;
+	justify-content: center;
+	box-shadow: 0px 0px 10px #808080;
+}
+
+/* 게시물 수정 css */
+
+#m1{
+	border-radius: 10px;
+	width: 1200px;
+	height:730px;
+	position: sticky;
+	display:inline-block;
+	justify-content: center;
+	box-shadow: 0px 0px 10px #808080;
+}
+
+/* #addReplyBtn{ */
+/* 	background-color :none;  */
+/* } */
