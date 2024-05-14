@@ -144,7 +144,7 @@
 							var addr = $('.address_input_3').val();
 							
 							/* 아이디 유효성검사 */
-					        if(id == ""){
+					        if(id == " "){
 					            $('.final_id_ck').css('display','block');
 					            idCheck = false;
 					        }else{
