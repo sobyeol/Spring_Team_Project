@@ -60,6 +60,7 @@ public class SampleControllerTests {
 //				.content(jsonStr))
 //				.andExpect(status().is(200));
 //	}
+<<<<<<< HEAD
 =======
 	@Test
 	public void testConvert() throws Exception {
@@ -80,4 +81,7 @@ public class SampleControllerTests {
 				.andExpect(status().is(200));
 	}
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
 }

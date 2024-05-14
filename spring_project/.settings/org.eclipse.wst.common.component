@@ -2,9 +2,13 @@
 <<<<<<< HEAD
                                             
     
+<<<<<<< HEAD
 =======
                                         
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
     
     
     
@@ -17,9 +21,13 @@
 <<<<<<< HEAD
                                                                                         
         
+<<<<<<< HEAD
 =======
                                                                                 
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
         
         
         
@@ -32,9 +40,13 @@
 <<<<<<< HEAD
                                                                                         
         
+<<<<<<< HEAD
 =======
                                                                                 
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
         
         
         
@@ -47,9 +59,13 @@
 <<<<<<< HEAD
                                                                                         
         
+<<<<<<< HEAD
 =======
                                                                                 
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
         
         
         
@@ -70,14 +86,23 @@
         
         
         
+<<<<<<< HEAD
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
 <<<<<<< HEAD
                                                                                         
         
+<<<<<<< HEAD
 =======
                                                                                 
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
         
         
         
@@ -91,11 +116,15 @@
         <property name="context-root" value="spring_project"/>
                                                                                     
     
+<<<<<<< HEAD
 =======
                 
         <property name="context-root" value="spring_project"/>
                                                                             
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
     
     
     
@@ -108,9 +137,13 @@
 <<<<<<< HEAD
                                         
 
+<<<<<<< HEAD
 =======
                                     
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
 
 
 
