@@ -132,6 +132,7 @@
             </nav>
          </div>
          <form id='actionForm' action="/company/company?cno=${company.cno}" method='get'>
+        	 <input type='hidden' name='cno' value='${company.cno }'>
 			<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum }'>
 			<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 			<input type='hidden' name='type' value='<c:out value="${pageMaker.cri.type}"/>'>
@@ -171,18 +172,18 @@
 
 <!--  <script> -->
  
-//  		var actionForm = $("#actionForm");
+<!-- //  		var actionForm = $("#actionForm"); -->
  		
-// 		$(".move").on(
-// 		"click",
-// 		function(e) {
+<!-- // 		$(".move").on( -->
+<!-- // 		"click", -->
+<!-- // 		function(e) { -->
 			
-// 			e.preventDefault();
-// 			actionForm.append("<input type='hidden' name='bno' value='"
-// 							+$(this).attr("href")+"'>");
-// 			actionForm.attr("action","/company/companyBoard");
-// 			actionForm.submit();
-// 		});
+<!-- // 			e.preventDefault(); -->
+<!-- // 			actionForm.append("<input type='hidden' name='bno' value='" -->
+<!-- // 							+$(this).attr("href")+"'>"); -->
+<!-- // 			actionForm.attr("action","/company/companyBoard"); -->
+<!-- // 			actionForm.submit(); -->
+<!-- // 		}); -->
 <!--  </script>   -->
 
 <%@include file="../include/modal.jsp" %>

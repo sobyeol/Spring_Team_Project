@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.domain.ComapnyPageDTO;
 import com.example.domain.CompanyBoardVO;
 import com.example.domain.CompanyVO;
 import com.example.domain.Criteria;
@@ -29,10 +30,6 @@ public class CompanyController {
 	
 	private CompanyService service;
 	private CompanyBoardService boardservice;
-	
-	
-	
-
 	
 	
 	@GetMapping("/companyList")
@@ -80,15 +77,19 @@ public class CompanyController {
 	}
 	
 	@GetMapping("/companyBoard")
-	public void companyBoard(@RequestParam("bno") Long bno,  Model model) {
+	public void companyBoard(@RequestParam("bno") Long bno, @RequestParam("cno") Long cno, Criteria cri, Model model) {
 		log.info("/companyBoard");
 		model.addAttribute("c_board", boardservice.get(bno));
+		model.addAttribute("list", boardservice.getList(cri, cno));
+		model.addAttribute("company", service.get(cno));
+		model.addAttribute("pageMaker",new ComapnyPageDTO(cri,223));
 	}
 	
 	@GetMapping("/modify")
 	public void modify (@RequestParam("bno") Long bno, Model model) {
 		log.info("/modify");
 		model.addAttribute("c_board", boardservice.get(bno));
+		
 		
 	}
 	
@@ -169,6 +170,7 @@ public class CompanyController {
 	public String remove(@RequestParam("bno")Long bno, Criteria cri, @RequestParam("cno") Long cno, RedirectAttributes rttr,Model model) {
 		log.info("remove...."+bno);
 		model.addAttribute("list", boardservice.getList(cri, cno));
+		model.addAttribute("company", service.get(cno));
 		if(boardservice.remove(bno)) {
 			rttr.addFlashAttribute("result", "success");
 		}

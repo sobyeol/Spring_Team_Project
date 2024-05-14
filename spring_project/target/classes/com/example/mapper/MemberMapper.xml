@@ -23,7 +23,11 @@
 	<!-- 로그인 -->
 	<select id="memberLogin" resultType="com.example.domain.MemberVO">
 	
+<<<<<<< HEAD
 		SELECT * FROM member1 where MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
+=======
+		SELECT MEMBERID, MEMBERNICK, ADMINCK, MONEY FROM member1 where MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
+>>>>>>> refs/remotes/origin/master
 	
 	</select>
 	
