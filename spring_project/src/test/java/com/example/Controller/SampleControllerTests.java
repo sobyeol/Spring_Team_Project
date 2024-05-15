@@ -61,8 +61,11 @@ public class SampleControllerTests {
 //				.andExpect(status().is(200));
 //	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
 =======
+=======
+>>>>>>> refs/remotes/origin/master
 =======
 	@Test
 	public void testConvert() throws Exception {
@@ -83,5 +86,11 @@ public class SampleControllerTests {
 				.andExpect(status().is(200));
 	}
 >>>>>>> 3dececb6a5cbc1861df99af84c5364f9031e6ca8
+<<<<<<< HEAD
 >>>>>>> ef9ff500679de1dbddd4d18c0a1f76ad5b300ee3
+=======
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> a5373a1cd0e304a7b15dfd7eb0dfac6a01587565
+>>>>>>> refs/remotes/origin/master
 }
