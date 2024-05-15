@@ -32,7 +32,8 @@ public class MyPageController {
 	public String mypage(HttpServletRequest request, MemberVO member, RedirectAttributes rttr) {
 		
 		HttpSession session = request.getSession();
-		String memberId = "test1";
+//		String memberId = "test1";
+		String memberId = (String) session.getAttribute("memberId");
 		session.setAttribute("memberId", memberId);
     
         

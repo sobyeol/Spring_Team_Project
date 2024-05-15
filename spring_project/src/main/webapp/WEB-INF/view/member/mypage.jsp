@@ -25,51 +25,51 @@
 						<div class="form-group row mb-2">
 							<label class="col-sm-3 ">아이디</label>
 							<div class="col-sm-3">
-								<input value="${memberId}" class="form-control" id="memberId" name="memberId" readonly>
+								<input value="${member.memberId}" class="form-control" id="memberId" name="memberId" readonly>
 							</div>
 						</div>
 						<div class="form-group row mb-1">
 							<label class="col-sm-3">비밀번호</label>
 							<div class="col-sm-3">
-								<input class="form-control" name="memberPw" id="memberPw" value="">
+								<input class="form-control" value="${member.memberPw}" name="memberPw" id="memberPw" type="password">
 							</div>
 						</div>
 						<div class="form-group row mb-2">
 							<label class="col-sm-3">성명</label>
 							<div class="col-sm-3">
-								<input value="${memberName}" class="form-control" name="memberName" id="memberName" readonly>
+								<input value="${member.memberName}" class="form-control" name="memberName" id="memberName" readonly>
 							</div>
 						</div>
 						<div class="form-group row mb-2">
 							<label class="col-sm-3">닉네임</label>
 							<div class="col-sm-3">
-								<input value="${memberNick}" class="form-control" name="memberNick" id="memberNick" readonly>
+								<input value="${member.memberNick}" class="form-control" name="memberNick" id="memberNick" readonly>
 							</div>
 						</div>
 						<div class="form-group row mb-2">
 							<label class="col-sm-3">이메일</label>
 							<div class="col-sm-4">
-								<input value="${memberNick}" name="memberMail" id="memberMail" readonly>@ 
-								<input value="${memberNick1}" name="memberMail1" id="memberMail1" readonly>
+								<input value="${member.memberMail}" name="memberMail" id="memberMail" readonly>@ 
+								<input value="${member.memberMail1}" name="memberMail1" id="memberMail1" readonly>
 							</div>
 						</div>
 						<div class="form-group row mb-4">
 							<label class="col-sm-3">우편번호</label>
 							<div class="col-sm-5">
-								<input name="memberAddr1" id="memberAddr1" value="${memberAddr1}" class="form-control" readonly>
+								<input name="memberAddr1" id="memberAddr1" value="${member.memberAddr1}" type="text" class="form-control" readonly>
 							</div>
 						</div>
 						<div class="form-group row mb-4">
 							<label class="col-sm-3">주소</label>
 							<div class="col-sm-5">
-								<input name="memberAddr2" id="memberAddr2" value="${memberAddr2}" class="form-control" readonly>
+								<input name="memberAddr2" id="memberAddr2" value="${member.memberAddr2}" type="text" class="form-control" readonly>
 			
 							</div>
 						</div>
 						<div class="form-group row mb-4">
 							<label class="col-sm-3">상세주소</label>
 							<div class="col-sm-5">
-								<input name="memberAddr3" id="memberAddr3" value="${memberAddr3}" class="form-control" readonly>
+								<input name="memberAddr3" id="memberAddr3" value="${member.memberAddr3}" type="text" class="form-control" readonly>
 							</div>
 						</div>
 			<div class="form-group  row">

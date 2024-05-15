@@ -23,7 +23,7 @@
 	<!-- 로그인 -->
 	<select id="memberLogin" resultType="com.example.domain.MemberVO">
 	
-		SELECT MEMBERID, MEMBERNICK, ADMINCK, MONEY FROM member1 where MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
+		SELECT * FROM member1 where MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
 	
 	</select>
 	
