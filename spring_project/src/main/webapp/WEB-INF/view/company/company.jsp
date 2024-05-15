@@ -171,18 +171,18 @@
 
 <!--  <script> -->
  
-//  		var actionForm = $("#actionForm");
+<!-- //  		var actionForm = $("#actionForm"); -->
  		
-// 		$(".move").on(
-// 		"click",
-// 		function(e) {
+<!-- // 		$(".move").on( -->
+<!-- // 		"click", -->
+<!-- // 		function(e) { -->
 			
-// 			e.preventDefault();
-// 			actionForm.append("<input type='hidden' name='bno' value='"
-// 							+$(this).attr("href")+"'>");
-// 			actionForm.attr("action","/company/companyBoard");
-// 			actionForm.submit();
-// 		});
+<!-- // 			e.preventDefault(); -->
+<!-- // 			actionForm.append("<input type='hidden' name='bno' value='" -->
+<!-- // 							+$(this).attr("href")+"'>"); -->
+<!-- // 			actionForm.attr("action","/company/companyBoard"); -->
+<!-- // 			actionForm.submit(); -->
+<!-- // 		}); -->
 <!--  </script>   -->
 
 <%@include file="../include/modal.jsp" %>
