@@ -7,33 +7,37 @@
 	
 <mapper namespace="com.example.mapper.ReplyMapper">
 
+<!-- 댓글입력 -->
 	<insert id="insert">
 	
-		insert into tbl_reply (rno, bno, reply, replyer)
-		values (seq_reply.nextval, #{bno}, #{reply}, #{replyer})
+		insert into reply (rno, bno, reply, replyer,nickname)
+		values (reply_seq.nextval, #{bno}, #{reply}, #{replyer}, #{nickname})
 		
 	</insert>
 
+<!-- 댓글조회 -->
 	<select id="read" resultType="com.example.domain.ReplyVO">
 	
-		select * from tbl_reply where rno = #{rno}
+		select * from reply where rno = #{rno}
 	
 	</select>
 	
+<!-- 댓글삭제 -->
 	<delete id="delete">
 	
 		delete 
 				from 
-						tbl_reply 
+						reply 
 		where 
 				rno = #{rno}
 	
 	</delete>
 	
+<!-- 	댓글수정 -->
 	<update id="update">
 	
 		update 
-				tbl_reply 
+				reply 
 		set 
 				reply = #{reply}, replyer = #{replyer},updatedate = sysdate 
 		where 
@@ -55,14 +59,14 @@
 
 	<![CDATA[
 	select 
-			rno, bno, reply, replyer, replyerdate, updatedate
+			rno, bno, reply, replyer, replydate, updatedate, nickname
 	from
 		(
 			select 
-					/*+INDEX(tbl_reply idx_reply) */ rownum rn, 
-					rno, bno, reply, replyer, replyerDate, updatedate
+					/*+INDEX(reply idx_reply) */ rownum rn, 
+					rno, bno, reply, replyer, replydate, updatedate, nickname
 			from 
-					tbl_reply
+					reply
 			where 
 					bno = #{bno}
 				and rno > 0
@@ -79,12 +83,13 @@
 			select 
 					count(rno)
 			from
-					tbl_reply
+					reply
 			where
 				bno = #{bno}
 ]]>
 </select>
 
+<<<<<<< HEAD
 =======
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -154,4 +159,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</select>
 >>>>>>> d5bf34f877748dfc65f8ed6736f0d77ae031e917
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> b31522993a250023faa5b5c1b31e54905abe7258
 </mapper>

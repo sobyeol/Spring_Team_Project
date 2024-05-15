@@ -62,7 +62,7 @@
 		update
 				board 
 		set
-				title= #{title}, content= #{content}, writer = #{writer}, updateDate = sysdate
+				title= #{title}, content= #{content}, writer = #{writer}, updatedate = sysdate
 		where
 				bno = #{bno}
 	</update>
@@ -73,7 +73,7 @@
 				bno, title, content, writer, regdate, updatedate, hit, nickname
 		from (
 				select
-						/*+INDEX_DESC(tbl_board board_pk) */ rownum rn,
+						/*+INDEX_DESC(board board_pk) */ rownum rn,
 						bno, title, content, writer, regdate, updatedate, hit, nickname
 				from
 						board
@@ -100,7 +100,7 @@
 <!-- 		</trim> -->
 		
 	<![CDATA[		
-						rownum <= #{pageNum} * #{amount}
+				rownum <= #{pageNum} * #{amount}
 			)
 		where
 				rn > (#{pageNum} -1) * #{amount}
@@ -133,7 +133,16 @@
 		bno > 0		
 	</select>
 	
+	<update id="boardHit" parameterType="int">
+		update 
+				board 
+		set 
+				hit = hit + 1
+		where 
+				bno = #{bno}		
+	</update>
 </mapper>
+<<<<<<< HEAD
 =======
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -265,3 +274,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 </mapper>
 >>>>>>> d5bf34f877748dfc65f8ed6736f0d77ae031e917
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> b31522993a250023faa5b5c1b31e54905abe7258
