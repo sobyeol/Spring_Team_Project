@@ -25,7 +25,7 @@
 		});
 		$("button[data-oper='list']").on("click",function(e){
 			operForm.find("#bno").remove();
-			operForm.attr("action","/board/list")
+			operForm.attr("action","/TeamProjectt/company/list")
 			operForm.submit();
 		});
 		
@@ -87,7 +87,8 @@
 											<a href="/company/remove?bno=<c:out value='${c_board.bno }'/>">Remove</a></button>
 											
 											<button data-oper='modify' class="btn btn-info">Modify</button>
-<%-- 											<button data-oper='list' class="btn btn-info"><a href="'/TeamProjectt/company/company?cno=${company.cno }">List</button> --%>
+											<button data-oper='list' class="btn btn-info"><a href="'/TeamProjectt/company/company?cno=${company.cno }">
+											<input type='hidden' name='cno' value='${company.cno }'>List</button>
 										</div>
 										
 									<form id='operForm' action="/company/modify" method="get"> <!-- get방식, 수정창 띄우는거니까 -->
